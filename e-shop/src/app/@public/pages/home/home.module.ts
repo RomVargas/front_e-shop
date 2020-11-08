@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
@@ -12,4 +12,10 @@ import { HomeComponent } from './home.component';
     HomeRoutingModule
   ]
 })
-export class HomeModule { }
+export class HomeModule implements OnInit{
+  
+  ngOnInit(): void {
+    console.log('home component')
+    throw new Error('Method not implemented.');
+  }
+}
