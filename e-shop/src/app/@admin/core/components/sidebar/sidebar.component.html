@@ -1,1 +1,17 @@
-<p>sidebar works!</p>
+<!-- Sidebar -->
+<div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">
+        <a [routerLink]="['/routePath']" routerLinkActive="router-link-active" class="title">
+            Web-On Coder
+        </a>
+    </div>
+    <div class="list-group list-group-flush">
+      <a [routerLink]="['/admin/dashboard']" routerLinkActive="router-link-active"  class="list-group-item list-group-item-action bg-light"><i class="fas fa-chart-line"></i> Dashboard</a>
+      <a [routerLink]="['/admin/links']" routerLinkActive="router-link-active"  class="list-group-item list-group-item-action bg-light"><i class="fas fa-link"></i> Links</a>
+      <a [routerLink]="['/admin/users']" routerLinkActive="router-link-active"  class="list-group-item list-group-item-action bg-light"><i class="fas fa-users"></i> Users</a>
+      <a [routerLink]="['/admin/events']" routerLinkActive="router-link-active"  class="list-group-item list-group-item-action bg-light"><i class="far fa-calendar-alt"></i> Events</a>
+      <a [routerLink]="['/admin/profile']" routerLinkActive="router-link-active"  class="list-group-item list-group-item-action bg-light"><i class="fas fa-id-badge"></i> Profile</a>
+      <a [routerLink]="['/admin/courses']" routerLinkActive="router-link-active"  class="list-group-item list-group-item-action bg-light"><i class="fas fa-graduation-cap"></i> Courses</a>
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->

@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  constructor() { }
+  toggledValue = true;
+  @Output() toggledChange = new EventEmitter<boolean>();
 
-  ngOnInit(): void {
+  toggled(){
+    if(this.toggledValue === undefined){
+      this.toggledValue = true;
+    }
+    this.toggledValue = !this.toggledValue
+    console.log(this.toggledValue)
+    this.toggledChange.emit(this.toggledValue);
+
   }
-
 }

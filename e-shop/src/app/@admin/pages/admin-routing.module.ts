@@ -14,6 +14,22 @@ const routes: Routes = [
       {
         path: 'users',
         loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
+      },
+      {
+        path: 'courses',
+        loadChildren: () => import('./courses/courses.module').then(m => m.CoursesModule)
+      },
+      {
+        path: 'events',
+        loadChildren: () => import('./events/events.module').then(m => m.EventsModule)
+      },
+      {
+        path: 'profile',
+        loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule)
+      },
+      {
+        path: 'links',
+        loadChildren: () => import('./links/links.module').then(m => m.LinksModule)
       }
     ]
   }
