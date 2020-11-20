@@ -30,3 +30,22 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Commands to create modules and components
 ng g m @admin/pages/links --routing
 ng g c @admin/pages/links --skipTests
+
+## iniciar servicio Mongo
+brew services start mongodb-community@4.2
+mongo
+
+## Usar base de datos
+use <nombre_base_de_datos>
+
+## ver collecciones
+show collections
+
+## Crear colleccion
+db.createCollection('<nombre_coleccion>')
+
+## Borrar Coleccion
+db.<nombre_coleccion>.drop()
+
+## mostrar documentos de una coleccion
+db.<nombre_coleccion>.find().pretty()
