@@ -1,19 +1,19 @@
 <div class="d-flex" id="wrapper">
 
-    <!--SideBar-->
-    <app-sidebar *ngIf="toggledValue"></app-sidebar>
-    <!--end SideBar-->
+  <!--SideBar-->
+  <app-sidebar *ngIf="toggledValue"></app-sidebar>
+  <!--end SideBar-->
 
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-      <!--Header-->
-      <app-header (toggledChange)="toggled($event)"></app-header>
-      <!--End Header-->
-      <div class="container-fluid">
-        <app-title></app-title>
-        <router-outlet></router-outlet>
-      </div>
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <!--Header-->
+    <app-header (toggledChange)="toggled($event)"></app-header>
+    <!--End Header-->
+    <div class="container-fluid">
+      <app-title></app-title>
+      <router-outlet></router-outlet>
     </div>
-    <!-- /#page-content-wrapper -->
-
   </div>
+  <!-- /#page-content-wrapper -->
+
+</div>
