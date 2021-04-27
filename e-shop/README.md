@@ -49,3 +49,6 @@ db.<nombre_coleccion>.drop()
 
 ## mostrar documentos de una coleccion
 db.<nombre_coleccion>.find().pretty()
+
+## crear componente haciendo referencia a un modulo especifico
+ng g c @public/core/components/header --skipTests --module=@public/pages/public.module.ts
