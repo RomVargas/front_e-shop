@@ -5,12 +5,12 @@ const routes: Routes = [
   
   {//Ruta comodin siempre debe ir al final
     path: '',
-    redirectTo: 'home',
+    redirectTo: '',
     pathMatch: 'full'
   },
   {//Ruta comodin siempre debe ir al final
     path: '**',
-    redirectTo: 'home',
+    redirectTo: '',
     pathMatch: 'full'
   }
 
