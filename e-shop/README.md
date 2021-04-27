@@ -52,3 +52,6 @@ db.<nombre_coleccion>.find().pretty()
 
 ## crear componente haciendo referencia a un modulo especifico
 ng g c @public/core/components/header --skipTests --module=@public/pages/public.module.ts
+
+## comando para instalar dependencia para llamada al API de graphQL y dependencias de apollo server
+npm install graphql graphql-tag apollo-client apollo-cache-inmemory apollo-angular apollo-angular-link-http apollo-link apollo-link-error
