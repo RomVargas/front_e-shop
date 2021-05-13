@@ -55,3 +55,18 @@ ng g c @public/core/components/header --skipTests --module=@public/pages/public.
 
 ## comando para instalar dependencia para llamada al API de graphQL y dependencias de apollo server
 npm install graphql graphql-tag apollo-client apollo-cache-inmemory apollo-angular apollo-angular-link-http apollo-link apollo-link-error
+
+## comando para crear servicio autenticacion
+ng g s @core/service/auth --skipTests
+
+## comando para el modulo de formularios
+ng g m @public/pages/forms/login --routing
+
+## comando para el modulo de registro
+ng g m @public/pages/forms/register --routing
+
+## comando para componente de login
+ng g c @public/pages/forms/login --skipTests
+
+## comando para el componete de registro
+ng g c @public/pages/forms/register --skipTests

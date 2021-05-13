@@ -7,7 +7,9 @@
     "paths": {
       "@shop/*": ["src/app/@public/*"],
       "@admin/*": ["src/app/@admin/*"],
-      "@graphql/*": ["src/app/@graphql/*"]
+      "@graphql/*": ["src/app/@graphql/*"],
+      "@public/*": ["src/app/@public/*"],
+      "@core/*": ["src/app/@core/*"]
     },
     "sourceMap": true,
     "declaration": false,
