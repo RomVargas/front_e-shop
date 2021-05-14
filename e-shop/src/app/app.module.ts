@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AdminModule }  from './@admin/pages/admin.module';
 import { PublicModule } from './@public/pages/public.module';
 import { GraphqlModule } from './@graphql/modules/graphql.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { GraphqlModule } from './@graphql/modules/graphql.module';
     AdminModule,
     PublicModule,
     GraphqlModule,
+    FontAwesomeModule,
     AppRoutingModule
   ],
   providers: [],
