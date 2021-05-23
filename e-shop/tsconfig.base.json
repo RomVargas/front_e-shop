@@ -9,7 +9,8 @@
       "@admin/*": ["src/app/@admin/*"],
       "@graphql/*": ["src/app/@graphql/*"],
       "@public/*": ["src/app/@public/*"],
-      "@core/*": ["src/app/@core/*"]
+      "@core/*": ["src/app/@core/*"],
+      "@shared/*": ["src/app/@shared/*"]
     },
     "sourceMap": true,
     "declaration": false,

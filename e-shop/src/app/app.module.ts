@@ -7,6 +7,7 @@ import { AdminModule }  from './@admin/pages/admin.module';
 import { PublicModule } from './@public/pages/public.module';
 import { GraphqlModule } from './@graphql/modules/graphql.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoginModule } from '@shop/pages/forms/login/login.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserModule,
     AdminModule,
     PublicModule,
+    LoginModule,
     GraphqlModule,
     FontAwesomeModule,
     AppRoutingModule

@@ -13,14 +13,28 @@
 										</div>
 									</header>
 									<div id="login-box-inner">
-										<form role="form" action="index.html">
+										<form (ngSubmit)="init()" #form="ngForm">
 											<div class="input-group">
 												<span class="input-group-addon"><i class="fa fa-user"></i></span>
-												<input class="form-control" type="text" placeholder="Email address">
+												<input class="form-control" 
+												type="email" 
+												#email="ngModel"
+												[(ngModel)]="login.email"
+												name="email"
+												[ngClass]="{'is-valid': !email.invalid , 'is-invalid': email.invalid}" 
+												pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+												placeholder="Email address" required>
+
 											</div>
-											<div class="input-group">
+												<div class="input-group">
 												<span class="input-group-addon"><i class="fa fa-key"></i></span>
-												<input type="password" class="form-control" placeholder="Password">
+												<input type="password"
+												#password="ngModel"
+												[(ngModel)]="login.password" 
+												class="form-control" 
+												name="password"
+												[ngClass]="{'is-valid': !password.invalid , 'is-invalid': password.invalid}"
+												placeholder="Password" required>
 											</div>
 											<div id="remember-me-wrapper">
 												<div class="row">
@@ -39,7 +53,7 @@
 											</div>
 											<div class="row">
 												<div class="col-xs-12">
-													<button type="submit" class="btn btn-success">Login</button>
+													<button type="submit" [disabled]="!form.valid" class="btn btn-success">Login</button>
 												</div>
 											</div>
 											<div class="row">
