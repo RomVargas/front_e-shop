@@ -70,3 +70,7 @@ ng g c @public/pages/forms/login --skipTests
 
 ## comando para el componete de registro
 ng g c @public/pages/forms/register --skipTests
+
+## comando para generar guardas al modulo admin
+ng g g @core/guards/admin --skipTests
+* CanActivateChild

@@ -4,7 +4,8 @@ import { LOGIN, ME_DATA_QUERY } from '@graphql/operations/queries/user';
 import { Apollo } from 'apollo-angular';
 import { map } from 'rxjs/operators';
 import { HttpHeaders } from '@angular/common/http';
-import { ISession } from '@core/interfaces/session.interface';
+import { IMeData, ISession } from '@core/interfaces/session.interface';
+import { Subject } from 'rxjs';
 
 
 @Injectable({
@@ -12,12 +13,42 @@ import { ISession } from '@core/interfaces/session.interface';
 })
 export class AuthService extends ApiService {
 
+  accessVar = new Subject<IMeData>();
+  accessVar$ = this.accessVar.asObservable();
+
   constructor(apollo: Apollo) {
     super(apollo);
    }
 
+  updateSession(newValue: IMeData){
+    this.accessVar.next(newValue);
+  }
+
+  start(){
+     if(this.getSession() !== null){
+      this.getMe().subscribe((res: IMeData) => {
+        if(!res.status){
+          this.resetSession();
+          return;
+        }
+        this.updateSession(res)
+      });
+      console.log('%c Sesion iniciada', 'color: red; font-weight: bold');
+      return;
+    }
+    this.updateSession({
+      status: false
+    });
+    console.log('%c Sesion no iniciada', 'color: red; font-weight: bold');
+  } 
+
+  resetSession() {
+    localStorage.removeItem('session');
+    this.updateSession({ status: false });
+  }
+
   login(email: string, password: string){
-    return this.get(LOGIN, {email, password}).pipe(
+    return this.get(LOGIN, {email, password, include: false}).pipe(
       map( (result: any) => {
         return result.login;
       }))

@@ -2,14 +2,18 @@ import gql from 'graphql-tag';
 import { USER_FRAGMENT } from '@graphql/operations/fragments/user';
 
 export const LOGIN = gql`
-    query getLogin($email:String!, $password:String!){
+    query getLogin($email:String!, $password:String!, $include: Boolean!){
         login(email:$email, password:$password)
         {
             status
             message
             token
+            user{
+                ...UserObject
+            }
         }
     }
+    ${ USER_FRAGMENT }
 `;
 
 export const USER_LIST_QUERY = gql`

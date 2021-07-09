@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
               private users: UsersService) { }
 
   ngOnInit(): void {
-    this.auth.login('roman@email.com','12345').subscribe(response => {
+    /*this.auth.login('roman@email.com','12345').subscribe(response => {
       console.log('%c Usuario logeado', 'color: orange; font-weight: bold')
       this.token = response
       console.log(response);
@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     this.auth.getMe().subscribe(response => {
       console.log('%c usuario ME: ' , 'color:orange; font-weight: bold')
       console.table(response);
-    });
+    });*/
   }
 
 }

@@ -27,7 +27,8 @@ export function genericAlert(title?: string, text?: string, icon = TYPE_ALERT.SU
         title: title,
         text: text,
         icon: icon,
-        confirmButtonText: button,
+        timer: 3000,
+        timerProgressBar: true, 
         position: position,
         toast: true
     })
