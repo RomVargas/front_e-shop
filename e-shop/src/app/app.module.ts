@@ -20,7 +20,7 @@ import { LoginModule } from '@shop/pages/forms/login/login.module';
     LoginModule,
     GraphqlModule,
     FontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -56,6 +56,9 @@ ng g c @public/core/components/header --skipTests --module=@public/pages/public.
 ## comando para instalar dependencia para llamada al API de graphQL y dependencias de apollo server
 npm install graphql graphql-tag apollo-client apollo-cache-inmemory apollo-angular apollo-angular-link-http apollo-link apollo-link-error
 
+# instalar jwt-decode
+npm i jwt-decode
+
 ## comando para crear servicio autenticacion
 ng g s @core/service/auth --skipTests
 
@@ -74,3 +77,12 @@ ng g c @public/pages/forms/register --skipTests
 ## comando para generar guardas al modulo admin
 ng g g @core/guards/admin --skipTests
 * CanActivateChild
+
+## se genera modulo date-picker
+ng g m @shared/calendar/date-picker-legal-age
+
+## se genera componente ddate-pickers
+ng g c @shared/calendar/date-picker-legal-age --skipTests
+
+## se agrega bootstrap
+ng add @ng-bootstrap/ng-bootstrap
