@@ -23,9 +23,9 @@ export class LoginComponent {
     this.auth.login(this.Ilogin.email, this.Ilogin.password).subscribe(
       (result: IResultlogin)=>{
         if(result.status && result.token !== null){
-          console.log('%c Usuario logeado correctamente', 'color: red; font-weight: bold');
+          console.log('%c Usuario logeado correctamente', 'color:green; font-weight: bold');
           console.log(result);
-          genericAlert('SUCCESS','Usuario logeado correctamente',TYPE_ALERT.SUCCESS,'Cool!', POSITION.CENTER);
+          
           this.auth.setSession(result.token);
           this.auth.updateSession(result);
           this.router.navigate(['/home']);
@@ -35,6 +35,13 @@ export class LoginComponent {
     });
   }
 
+  facebookLogin(){
+    console.log('%c login de facebook', 'color:blue;font-size:13px;');
+  }
+
+  twitterLogin(){
+    console.log('%c login de twitter', 'color:blue;font-size:13px;');
+  }
 }
 
 

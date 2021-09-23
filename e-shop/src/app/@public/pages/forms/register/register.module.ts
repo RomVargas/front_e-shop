@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RegisterRoutingModule } from './register-routing.module';
 import { RegisterComponent } from './register.component';
 import { DatePickerLegalAgeModule } from '@shared/calendar/date-picker-legal-age/date-picker-legal-age.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [RegisterComponent],
@@ -11,6 +12,8 @@ import { DatePickerLegalAgeModule } from '@shared/calendar/date-picker-legal-age
     CommonModule,
     RegisterRoutingModule,
     DatePickerLegalAgeModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class RegisterModule { }
