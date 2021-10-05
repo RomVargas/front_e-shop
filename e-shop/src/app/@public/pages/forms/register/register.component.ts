@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '@core/service/auth.service';
 import { genericAlert } from '@shared/toasts';
 import { POSITION, TYPE_ALERT } from '@shared/values.config';
 import { IRegisterForm, IResultRegister } from '@core/interfaces/register.interface';
-import { ApiService } from '@graphql/service/api.service';
 import { UsersService } from '@core/service/users.service';
 
 @Component({
@@ -45,15 +43,22 @@ export class RegisterComponent implements OnInit {
         this.Iregister.role = 'ADMIN';
         this.api.register(
           this.Iregister
-        ).subscribe((result) => {
+        ).subscribe((result: IResultRegister) => {
           console.log('%c Result: ', 'color:greenyellow; font-size:20px', result);
+          if (!result.status) {
+            genericAlert('WARNING',result.message,TYPE_ALERT.WARNING,'error!', POSITION.CENTER);
+            return;
+          }
+          else {
+            genericAlert('SUCCESS',result.message, TYPE_ALERT.SUCCESS, POSITION.CENTER);
+            this.router.navigate(['/login']);
+          }
         })
       } catch (error) {
         genericAlert('ERROR',error,TYPE_ALERT.ERROR,'error!', POSITION.CENTER);
         return;
       }
     }
-    this.router.navigate(['/login']);
   }
 
   ngOnInit(): void {

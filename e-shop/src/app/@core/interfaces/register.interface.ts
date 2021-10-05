@@ -1,3 +1,5 @@
+import { IUser } from "./user.interface";
+
 export interface IRegisterForm {
     name: string;
     lastname: string;
@@ -11,5 +13,5 @@ export interface IRegisterForm {
 export interface IResultRegister {
     status: boolean;
     message: string;
-    token?: string;
+    user: IUser;
 }
